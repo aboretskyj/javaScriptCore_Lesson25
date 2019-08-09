@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore.js"></script>
+    <title>Underscore arrays</title>
+</head>
+<body>
+
+    <script>
+        var myArray = [];
+
+        fillArray(myArray, -50, 4, 30);
+        show("This is my generated array: \n" + myArray);
+
+        myArray = _.shuffle(myArray);
+        show("This is my array after shuffling: \n" + myArray);
+        show("The index of minimal element = " + _.indexOf(myArray, _.min(myArray)));
+        show("The index of maximal element = "+ _.indexOf(myArray, _.max(myArray)));
+
+
+        //functions
+        
+        function fillArray (array, start, step, finish){
+            
+            let item = start;
+            while (item <= finish) {
+                array.push(item);
+                item += step;
+            }
+            return array;
+        }
+
+        function show(data){
+            console.log(data);
+        };
+
+
+    </script>
+    
+    
+</body>
+</html>
